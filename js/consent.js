@@ -228,7 +228,7 @@
     consentGranted = true;
 
     if (consentStatus) {
-      consentStatus.innerHTML = '\u25cf Email consent granted \u2713';
+      consentStatus.innerHTML = '\u25cf  consent granted \u2713';
       consentStatus.className = 'consent-status granted';
     }
 
