@@ -18,7 +18,7 @@
 
   /* ─── ARC API CONFIG ─────────────────────────────────────────── */
   const ARC_TOKEN = 'arc_live_cbb9cecb070b6ebeda1ba066bb9beacd';
-  const FORM_TOKEN = '3b425527455a76afa6d4d5c48a192e64';
+  const FORM_TOKEN = '588579c793ebace6b6cfe223c394781a';
   const API_BASE = 'https://arcompli.com/api/v1';
 
   /* ─── STATE ──────────────────────────────────────────────────── */
@@ -80,9 +80,7 @@
     } catch (err) {
       console.warn('[Consent] Could not load ARC purposes (using fallback):', err.message);
       arcPurposes = [
-        { id: '681443cb-a923-4885-abaa-6be6c70cb5c8', name: 'Marketing' },
-        { id: 'b18e5ff7-f3eb-4f7e-9a08-c34198031031', name: 'Communications & Newsletters' },
-        { id: '5a1ac1a5-d55a-49bc-918b-086f3d7212b4', name: 'Email Notification' }
+        { id: 'b18e5ff7-f3eb-4f7e-9a08-c34198031031', name: 'Communication' },
       ];
     }
   }
@@ -240,7 +238,7 @@
       submitBtn.classList.add('enabled');
     }
 
-    if (acceptBtn) acceptBtn.textContent = 'Accepted \u2713';
+    if (acceptBtn) acceptBtn.textContent = 'Consented \u2713';
   }
 
   /* ─── SILENT GRANT (email already consented) ─────────────────── */
@@ -272,7 +270,7 @@
 
     if (submitBtn) { submitBtn.style.display = 'none'; submitBtn.disabled = true; submitBtn.classList.remove('enabled'); }
     if (consentStatus) { consentStatus.textContent = ''; consentStatus.className = 'consent-status'; }
-    if (acceptBtn) { acceptBtn.disabled = false; acceptBtn.textContent = 'Accept All \u2713'; }
+    if (acceptBtn) { acceptBtn.disabled = false; acceptBtn.textContent = 'I Consent \u2713'; }
 
     updateBannerData();
   }
@@ -307,13 +305,13 @@
     // Deduplicated list of consented emails
     const list = getConsentedEmails();
     if (!list.some(e => e.email.toLowerCase() === email.toLowerCase())) {
-      list.push({ email, date: Date.now(), purpose: 'Marketing and product updates' });
+      list.push({ email, date: Date.now(), purpose: 'Communication' });
       localStorage.setItem('gu_consented_emails', JSON.stringify(list));
     }
 
     // Always log to history (even repeat consents)
     const history = getConsentHistory();
-    history.push({ type: 'granted', email, timestamp: Date.now(), purpose: 'Marketing and product updates' });
+    history.push({ type: 'granted', email, timestamp: Date.now(), purpose: 'Communication' });
     localStorage.setItem('gu_consent_history', JSON.stringify(history));
 
     console.log('[Consent] \ud83d\udce6 Saved to localStorage:', email);

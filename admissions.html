@@ -201,23 +201,28 @@
     </div><!-- /.container -->
   </main>
 
-  <!-- ════ COOKIE CONSENT BANNER ════ -->
-  <div id="cookieBanner" role="dialog" aria-live="polite" aria-label="Cookie consent">
+  <!-- ════ COMMUNICATION CONSENT NOTICE ════ -->
+  <div id="cookieBanner" role="dialog" aria-live="polite" aria-label="Communication consent">
     <div class="banner-inner">
-      <div class="banner-icon">🍪</div>
 
       <div class="banner-content">
-        <div class="banner-title">We'd like to use your data for personalised communication</div>
+        <div class="banner-header-row">
+          <span class="banner-purpose-badge">📣 Purpose: Communication</span>
+          <button id="closeBanner" aria-label="Close" class="banner-close-btn">✕</button>
+        </div>
+
+        <div class="banner-title">Consent to Contact You</div>
         <div class="banner-desc">
-          Before you submit, we need your consent to use the details below for email updates,
-          programme information, and admissions updates. You can withdraw at any time via ⚙.
+          Greenfield University would like your permission to contact you regarding your application,
+          programme details, and important admissions updates. This is the <strong>only</strong> purpose
+          for which your data will be used.
         </div>
 
         <!-- Live-updating data list -->
         <div class="banner-data-block">
-          <div class="bd-label-head">📋 Data we'll use</div>
+          <div class="bd-label-head">📋 Information you are sharing</div>
           <ul id="bannerDataList">
-            <li class="bd-empty">Fill in the form to see data reflected here…</li>
+            <li class="bd-empty">Fill in the form to see your data reflected here…</li>
           </ul>
         </div>
 
@@ -225,27 +230,17 @@
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
           </svg>
-          Data processed under DPDPA · ARC Consent Platform · You may withdraw at any time
+          Processed under DPDPA &nbsp;·&nbsp; ARC Consent Platform &nbsp;·&nbsp; Withdraw anytime via ⚙
         </div>
       </div>
 
       <div class="banner-actions">
-        <div class="banner-top-row">
-          <span class="banner-lang">🌐
-            <select aria-label="Language">
-              <option>EN</option>
-              <option>FR</option>
-              <option>DE</option>
-              <option>ES</option>
-            </select>
-          </span>
-          <button id="closeBanner" aria-label="Close banner">✕</button>
-        </div>
         <div class="banner-btn-row">
           <button id="declineCookies">Decline</button>
-          <button id="acceptCookies">Accept All ✓</button>
+          <button id="acceptCookies">I Consent ✓</button>
         </div>
       </div>
+
     </div>
   </div>
 

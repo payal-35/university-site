@@ -162,7 +162,7 @@
 .form-note span { display: flex; align-items: center; gap: .3rem; }
 
 /* ═══════════════════════════════════════════════════════
-   COOKIE CONSENT BANNER
+   COMMUNICATION CONSENT NOTICE
    ═══════════════════════════════════════════════════════ */
 #cookieBanner {
   position: fixed;
@@ -186,16 +186,39 @@
   flex-wrap: wrap;
 }
 
-.banner-icon {
-  width: 44px; height: 44px;
-  border-radius: 50%;
-  background: rgba(0,180,160,.1);
-  border: 2px solid var(--teal);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 1.1rem;
-  flex-shrink: 0;
-  margin-top: 4px;
+/* Banner header row: purpose badge + close button */
+.banner-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: .55rem;
 }
+.banner-purpose-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  background: rgba(0,180,160,.1);
+  border: 1px solid rgba(0,180,160,.3);
+  color: var(--teal-dark);
+  font-size: .74rem;
+  font-weight: 700;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  padding: .25rem .75rem;
+  border-radius: 50px;
+}
+.banner-close-btn {
+  background: none;
+  border: none;
+  color: var(--gray-400);
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 2px 6px;
+  border-radius: 4px;
+  transition: var(--transition);
+  line-height: 1;
+}
+.banner-close-btn:hover { color: var(--navy); background: var(--gray-100); }
 
 .banner-content { flex: 1; min-width: 260px; }
 .banner-title {
@@ -259,21 +282,6 @@
 }
 .banner-note svg { flex-shrink: 0; }
 
-/* Language selector */
-.banner-lang {
-  font-size: .8rem;
-  color: var(--gray-600);
-  display: flex; align-items: center; gap: .3rem;
-}
-.banner-lang select {
-  border: 1px solid var(--gray-200);
-  border-radius: 6px;
-  padding: 2px 6px;
-  font-size: .78rem;
-  background: white;
-  cursor: pointer;
-}
-
 /* Banner Action Buttons */
 .banner-actions {
   display: flex;
@@ -282,25 +290,6 @@
   gap: .6rem;
   flex-shrink: 0;
 }
-.banner-top-row {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  width: 100%;
-  justify-content: flex-end;
-}
-
-#closeBanner {
-  background: none; border: none;
-  color: var(--gray-400);
-  font-size: 1.1rem;
-  cursor: pointer;
-  padding: 2px 6px;
-  border-radius: 4px;
-  transition: var(--transition);
-  line-height: 1;
-}
-#closeBanner:hover { color: var(--navy); background: var(--gray-100); }
 
 .banner-btn-row {
   display: flex;
@@ -393,7 +382,6 @@
   .admissions-info   { position: static; }
   .form-row          { grid-template-columns: 1fr; }
   .banner-actions    { align-items: flex-start; }
-  .banner-top-row    { justify-content: flex-start; }
 }
 @media (max-width: 540px) {
   #cookieBanner { padding: 1rem; }
