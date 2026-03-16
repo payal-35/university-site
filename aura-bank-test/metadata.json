@@ -1,0 +1,5 @@
+{
+  "name": "Aura Bank",
+  "description": "A beautiful, modern bank website with a full landing page and a contact form powered by a REST API.",
+  "requestFramePermissions": []
+}

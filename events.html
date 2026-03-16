@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events — Greenfield University</title>
+  <meta name="description" content="Upcoming events, open days, lectures, workshops, and festivals at Greenfield University.">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .events-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.75rem; }
+    .event-card { background:white; border-radius:var(--radius); border:1px solid var(--gray-200); overflow:hidden; box-shadow:var(--shadow-sm); transition:var(--transition); display:flex; flex-direction:column; }
+    .event-card:hover { transform:translateY(-4px); box-shadow:var(--shadow-md); }
+    .event-date-strip { padding:.75rem 1.25rem; display:flex; align-items:center; justify-content:space-between; }
+    .event-month { font-size:.72rem; font-weight:700; text-transform:uppercase; letter-spacing:.06em; opacity:.7; }
+    .event-day { font-size:2rem; font-weight:900; font-family:'Inter',sans-serif; line-height:1; }
+    .event-body { padding:1.25rem; flex:1; }
+    .event-body h3 { color:var(--navy); font-family:'Inter',sans-serif; font-size:1rem; font-weight:700; margin-bottom:.4rem; }
+    .event-body p { font-size:.82rem; }
+    .event-meta { display:flex; gap:.5rem; flex-wrap:wrap; margin-top:.75rem; font-size:.75rem; color:var(--gray-400); }
+    .event-meta span { display:flex; align-items:center; gap:.25rem; }
+    .event-footer { padding:1rem 1.25rem; border-top:1px solid var(--gray-100); display:flex; justify-content:space-between; align-items:center; }
+    .event-register { font-size:.8rem; font-weight:600; color:var(--teal-dark); text-decoration:none; }
+    .event-register:hover { text-decoration:underline; }
+    .featured-event { background:linear-gradient(135deg,var(--navy),var(--navy-mid)); color:white; border-radius:var(--radius-lg); padding:2.5rem; margin-bottom:3rem; display:grid; grid-template-columns:1fr auto; gap:2rem; align-items:center; }
+    .fe-date { text-align:center; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.2); border-radius:12px; padding:1rem 1.5rem; min-width:90px; }
+    .fe-month { font-size:.75rem; font-weight:700; color:var(--teal-light); text-transform:uppercase; }
+    .fe-day { font-size:2.5rem; font-weight:900; color:white; font-family:'Inter',sans-serif; line-height:1; }
+    .fe-year { font-size:.72rem; color:rgba(255,255,255,.5); }
+    .featured-event h2 { color:white; margin:.5rem 0; }
+    .featured-event p { color:rgba(255,255,255,.65); }
+    @media(max-width:900px){ .events-grid{grid-template-columns:1fr 1fr;} .featured-event{grid-template-columns:1fr;} }
+    @media(max-width:560px){ .events-grid{grid-template-columns:1fr;} }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="navbar-brand"><div class="brand-icon">GU</div><div class="brand-text"><div class="brand-name">Greenfield University</div><div class="brand-sub">Est. 1892</div></div></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="academics.html">Academics</a></li><li><a href="admissions.html">Admissions</a></li><li><a href="events.html" class="active">Events</a></li><li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-cta"><a href="admissions.html" class="btn btn-primary" style="padding:.55rem 1.3rem;font-size:.88rem;">Apply Now →</a></div>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </nav>
+
+  <header class="page-header">
+    <div class="container">
+      <span class="badge badge-gold" style="margin-bottom:1rem;">🗓 March–May 2025</span>
+      <h1>Events &amp; Campus Life</h1>
+      <p>Open days, lectures, workshops, cultural festivals, and career fairs — there's always something happening at Greenfield.</p>
+      <div class="breadcrumb"><a href="index.html">Home</a><span>›</span><span>Events</span></div>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+
+      <!-- Featured Event -->
+      <div class="featured-event">
+        <div>
+          <span class="badge badge-teal" style="margin-bottom:.75rem;">⭐ Featured Event</span>
+          <h2>Open Day — Spring 2025</h2>
+          <p style="margin:.5rem 0 1rem;">Tour our 550-acre campus, meet faculty, attend taster lectures, and speak to current students. Free entry — families welcome.</p>
+          <div style="display:flex;gap:1.5rem;flex-wrap:wrap;font-size:.83rem;color:rgba(255,255,255,.55);">
+            <span>📍 Main Campus, Greenfield</span>
+            <span>⏰ 10:00 AM – 4:00 PM</span>
+            <span>🎟 Free Admission</span>
+          </div>
+          <a href="admissions.html" class="btn btn-primary" style="margin-top:1.5rem;display:inline-flex;">Register Now →</a>
+        </div>
+        <div class="fe-date"><div class="fe-month">April</div><div class="fe-day">12</div><div class="fe-year">2025</div></div>
+      </div>
+
+      <!-- Events Grid -->
+      <div class="section-title" style="margin-bottom:2rem;">
+        <h2>Upcoming Events</h2>
+        <p>All events are open to current students, prospective applicants, and the public unless stated otherwise</p>
+      </div>
+
+      <div class="events-grid">
+        <div class="event-card"><div class="event-date-strip" style="background:linear-gradient(135deg,var(--teal),var(--teal-dark));color:white;"><div><div class="event-month">March</div><div class="event-day">22</div></div><span class="badge" style="background:rgba(255,255,255,.15);color:white;font-size:.7rem;">Workshop</span></div><div class="event-body"><h3>Research Methods Workshop Series</h3><p>A three-day intensive workshop for postgraduate students covering qualitative and quantitative research design.</p><div class="event-meta"><span>📍 Library Wing B</span><span>⏰ 9am – 1pm</span><span>🎟 Free</span></div></div><div class="event-footer"><span class="badge badge-teal" style="font-size:.68rem;">PG Students</span><a href="#" class="event-register">Register →</a></div></div>
+
+        <div class="event-card"><div class="event-date-strip" style="background:linear-gradient(135deg,var(--gold-dark),var(--gold));color:var(--navy);"><div><div class="event-month">April</div><div class="event-day">5</div></div><span class="badge" style="background:rgba(0,0,0,.1);color:var(--navy);font-size:.7rem;">Careers</span></div><div class="event-body"><h3>Greenfield Placement Fair 2025</h3><p>Meet 300+ employers from tech, finance, law, healthcare, and engineering. Bring your CV and dress to impress!</p><div class="event-meta"><span>📍 Sports Hall</span><span>⏰ 10am – 5pm</span><span>🎟 Free</span></div></div><div class="event-footer"><span class="badge badge-gold" style="font-size:.68rem;">All Students</span><a href="#" class="event-register">Register →</a></div></div>
+
+        <div class="event-card"><div class="event-date-strip" style="background:linear-gradient(135deg,var(--navy),var(--navy-mid));color:white;"><div><div class="event-month">April</div><div class="event-day">15</div></div><span class="badge" style="background:rgba(255,255,255,.15);color:white;font-size:.7rem;">Research</span></div><div class="event-body"><h3>Annual Research Symposium</h3><p>3-day symposium showcasing PhD and postdoctoral research across all faculties. Poster presentations and keynotes.</p><div class="event-meta"><span>📍 Main Auditorium</span><span>⏰ 9am – 6pm</span><span>Apr 15–17</span></div></div><div class="event-footer"><span class="badge badge-navy" style="font-size:.68rem;">Academic</span><a href="#" class="event-register">Register →</a></div></div>
+
+        <div class="event-card"><div class="event-date-strip" style="background:linear-gradient(135deg,#c02c2c,#e53e3e);color:white;"><div><div class="event-month">April</div><div class="event-day">22</div></div><span class="badge" style="background:rgba(255,255,255,.15);color:white;font-size:.7rem;">Cultural</span></div><div class="event-body"><h3>GreenFest — Annual Cultural Festival</h3><p>200+ performers from 40 countries. Music, food stalls, art installations, and live dance across the main quad.</p><div class="event-meta"><span>📍 Main Quad</span><span>⏰ 12pm – 11pm</span><span>Apr 22–24</span></div></div><div class="event-footer"><span class="badge" style="background:rgba(192,44,44,.12);color:#c02c2c;font-size:.68rem;">All Welcome</span><a href="#" class="event-register">Book Tickets →</a></div></div>
+
+        <div class="event-card"><div class="event-date-strip" style="background:linear-gradient(135deg,#2d7a4a,#3da861);color:white;"><div><div class="event-month">May</div><div class="event-day">3</div></div><span class="badge" style="background:rgba(255,255,255,.15);color:white;font-size:.7rem;">Guest Lecture</span></div><div class="event-body"><h3>Distinguished Lecture: Future of AI</h3><p>Keynote by Dr. Priya Rao (Google DeepMind) on the societal impact of generative AI and responsible innovation.</p><div class="event-meta"><span>📍 Lecture Hall 1</span><span>⏰ 6pm – 8pm</span><span>🎟 Free</span></div></div><div class="event-footer"><span class="badge badge-teal" style="font-size:.68rem;">Public Event</span><a href="#" class="event-register">Register →</a></div></div>
+
+        <div class="event-card"><div class="event-date-strip" style="background:linear-gradient(135deg,#3d1a6e,#7a35c0);color:white;"><div><div class="event-month">May</div><div class="event-day">31</div></div><span class="badge" style="background:rgba(255,255,255,.15);color:white;font-size:.7rem;">Deadline</span></div><div class="event-body"><h3>📋 Fall 2025 Application Deadline</h3><p>The final deadline to submit your application for September 2025 entry. Late applications may not be considered.</p><div class="event-meta"><span>⏰ 11:59 PM</span><span>🌐 Online</span></div></div><div class="event-footer"><span class="badge" style="background:rgba(229,62,62,.12);color:#e53e3e;font-size:.68rem;">Important Date</span><a href="admissions.html" class="event-register">Apply Now →</a></div></div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer"><div class="container footer-grid"><div class="footer-brand"><div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.5rem;"><div class="brand-icon" style="width:34px;height:34px;font-size:.9rem;">GU</div><span class="brand-name">Greenfield University</span></div><p>Shaping leaders, advancing knowledge — since 1892.</p></div><div class="footer-col"><h4>Events</h4><ul><li><a href="#">Open Days</a></li><li><a href="#">Workshops</a></li><li><a href="#">Lectures</a></li><li><a href="#">Cultural</a></li></ul></div><div class="footer-col"><h4>University</h4><ul><li><a href="about.html">About</a></li><li><a href="academics.html">Academics</a></li><li><a href="admissions.html">Admissions</a></li></ul></div><div class="footer-col"><h4>Legal</h4><ul><li><a href="#">Privacy</a></li><li><a href="#">Cookies</a></li><li><a href="#">Terms</a></li></ul></div></div><div class="footer-bottom"><div class="container" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;"><span>© 2025 Greenfield University</span><span><a href="#">Privacy</a> · <a href="#">Cookies</a></span></div></div></footer>
+
+  <script src="js/settings.js"></script>
+  <script>document.getElementById('hamburger').addEventListener('click',()=>document.getElementById('navLinks').classList.toggle('mobile-open'));</script>
+
+  <!-- ARC Cookie Banner SDK -->
+  <script
+    src="https://arcompli.com/sdk/cookie-banner.js"
+    data-api-key="arc_live_cbb9cecb070b6ebeda1ba066bb9beacd"
+    data-position="bottom"
+    data-auto-block="true"
+  ></script>
+</body>
+</html>

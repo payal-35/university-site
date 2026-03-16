@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admissions — Apply to Greenfield University</title>
+  <meta name="description" content="Apply to Greenfield University. Start your application for our 140+ undergraduate and postgraduate programs. Applications open for Fall 2025.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/admissions.css">
+</head>
+<body>
+
+  <!-- ════ NAVBAR ════ -->
+  <nav class="navbar">
+    <a href="index.html" class="navbar-brand">
+      <div class="brand-icon">GU</div>
+      <div class="brand-text">
+        <div class="brand-name">Greenfield University</div>
+        <div class="brand-sub">Est. 1892</div>
+      </div>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="academics.html">Academics</a></li>
+      <li><a href="admissions.html" class="active">Admissions</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="admissions.html" class="btn btn-primary" style="padding:.55rem 1.3rem;font-size:.88rem;">Apply Now →</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ════ PAGE HEADER ════ -->
+  <header class="page-header">
+    <div class="container">
+      <span class="badge badge-teal" style="margin-bottom:1rem;">Fall 2025 Applications Open</span>
+      <h1>Apply to Greenfield University</h1>
+      <p>Take the first step toward your future. Complete the form below and our admissions team will be in touch within 24 hours.</p>
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span>›</span>
+        <span>Admissions</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ════ MAIN CONTENT ════ -->
+  <main class="section">
+    <div class="container">
+      <div class="admissions-layout">
+
+        <!-- ── Info Panel ── -->
+        <aside class="admissions-info">
+          <span class="badge badge-teal" style="margin-bottom:.75rem;">Why Choose Greenfield?</span>
+          <h2>Begin Your Academic Journey</h2>
+          <p>We welcome applications from students across the world. Our admissions process is designed to be straightforward, transparent, and supportive.</p>
+
+          <div class="info-steps">
+            <div class="info-step">
+              <div class="step-num">1</div>
+              <div class="step-text">
+                <strong>Fill in the Application Form</strong>
+                <p>Provide your personal and academic details in the form.</p>
+              </div>
+            </div>
+            <div class="info-step">
+              <div class="step-num">2</div>
+              <div class="step-text">
+                <strong>Accept Email Consent</strong>
+                <p>Consent allows us to contact you with personalized programme information.</p>
+              </div>
+            </div>
+            <div class="info-step">
+              <div class="step-num">3</div>
+              <div class="step-text">
+                <strong>Submit Your Application</strong>
+                <p>Once consent is given, the submit button will activate.</p>
+              </div>
+            </div>
+            <div class="info-step">
+              <div class="step-num">4</div>
+              <div class="step-text">
+                <strong>We Get In Touch</strong>
+                <p>Our admissions team responds within 24 hours with next steps.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="info-note">
+            <span>🔒</span>
+            <span>Your data is processed in compliance with GDPR. You can withdraw consent at any time via the ⚙ settings icon below.</span>
+          </div>
+
+          <div style="margin-top:1.5rem;padding:1.2rem;background:rgba(0,180,160,.07);border-radius:10px;border:1px solid rgba(0,180,160,.15);">
+            <div style="font-size:.82rem;color:var(--navy);font-weight:700;margin-bottom:.5rem;">📞 Need Help?</div>
+            <div style="font-size:.82rem;color:var(--gray-600);">Call: <strong>+1 (800) 555-0192</strong></div>
+            <div style="font-size:.82rem;color:var(--gray-600);">Email: <strong>admissions@greenfield.edu</strong></div>
+            <div style="font-size:.82rem;color:var(--gray-400);margin-top:.3rem;">Mon–Fri, 9am – 5pm</div>
+          </div>
+        </aside>
+
+        <!-- ── Form Card ── -->
+        <div class="form-card">
+          <h3>Application Form — Fall 2025</h3>
+          <p class="form-subtitle">Fields marked with <span style="color:var(--teal-dark);">*</span> are required · Submission activates after consent</p>
+
+          <form id="admissionsForm" novalidate>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fullName">Full Name <span class="req">*</span></label>
+                <input type="text" id="fullName" name="fullName" placeholder="e.g. Jane Smith" autocomplete="name" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address <span class="req">*</span></label>
+                <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000" autocomplete="tel">
+              </div>
+              <div class="form-group">
+                <label for="dob">Date of Birth</label>
+                <input type="date" id="dob" name="dob">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="program">Program of Interest <span class="req">*</span></label>
+              <select id="program" name="program" required>
+                <option value="">Select a programme…</option>
+                <option value="Computer Science & AI">BSc Computer Science &amp; Artificial Intelligence</option>
+                <option value="Biomedical Sciences">BSc Biomedical Sciences</option>
+                <option value="Business Administration">BBA Business Administration</option>
+                <option value="MBA">Master of Business Administration (MBA)</option>
+                <option value="Law">LLB Law</option>
+                <option value="Mechanical Engineering">BEng Mechanical Engineering</option>
+                <option value="Data Science">MSc Data Science</option>
+                <option value="Psychology">BSc Psychology</option>
+                <option value="Architecture">BArch Architecture</option>
+                <option value="Other">Other (please specify in message)</option>
+              </select>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="intake">Intended Intake</label>
+                <select id="intake" name="intake">
+                  <option value="">Select intake…</option>
+                  <option value="Fall 2025">Fall 2025 (September)</option>
+                  <option value="Spring 2026">Spring 2026 (January)</option>
+                  <option value="Fall 2026">Fall 2026 (September)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="nationality">Nationality</label>
+                <input type="text" id="nationality" name="nationality" placeholder="e.g. Indian, British…">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Personal Statement / Additional Details</label>
+              <textarea id="message" name="message" rows="4" placeholder="Tell us about your academic background, goals, and why you want to study at Greenfield University…"></textarea>
+            </div>
+
+            <!-- Consent Status Indicator -->
+            <div class="consent-status" id="consentStatus"></div>
+
+            <!-- Submit Button — hidden until consent granted -->
+            <button type="submit" id="formSubmitBtn" disabled>
+              🎓 Submit Application
+            </button>
+
+            <div class="form-note">
+              <span>⏱ We typically respond within 24 hours</span>
+              <span>🔒 Your data is secure and confidential</span>
+            </div>
+
+          </form>
+        </div><!-- /.form-card -->
+
+      </div><!-- /.admissions-layout -->
+    </div><!-- /.container -->
+  </main>
+
+  <!-- ════ COOKIE CONSENT BANNER ════ -->
+  <div id="cookieBanner" role="dialog" aria-live="polite" aria-label="Cookie consent">
+    <div class="banner-inner">
+      <div class="banner-icon">🍪</div>
+
+      <div class="banner-content">
+        <div class="banner-title">We'd like to use your data for personalised communication</div>
+        <div class="banner-desc">
+          Before you submit, we need your consent to use the details below for email updates,
+          programme information, and admissions updates. You can withdraw at any time via ⚙.
+        </div>
+
+        <!-- Live-updating data list -->
+        <div class="banner-data-block">
+          <div class="bd-label-head">📋 Data we'll use</div>
+          <ul id="bannerDataList">
+            <li class="bd-empty">Fill in the form to see data reflected here…</li>
+          </ul>
+        </div>
+
+        <div class="banner-note">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Data processed under GDPR · ARC Consent Platform · You may withdraw at any time
+        </div>
+      </div>
+
+      <div class="banner-actions">
+        <div class="banner-top-row">
+          <span class="banner-lang">🌐
+            <select aria-label="Language">
+              <option>EN</option><option>FR</option><option>DE</option><option>ES</option>
+            </select>
+          </span>
+          <button id="closeBanner" aria-label="Close banner">✕</button>
+        </div>
+        <div class="banner-btn-row">
+          <button id="declineCookies">Decline</button>
+          <button id="acceptCookies">Accept All ✓</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════ SUCCESS MODAL ════ -->
+  <div id="successModal" role="dialog" aria-modal="true" aria-label="Application submitted">
+    <div class="modal-box">
+      <div class="modal-icon">🎓</div>
+      <h3>Application Submitted!</h3>
+      <p id="successMsg">Your application has been received. We'll be in touch shortly.</p>
+      <button class="modal-close">Close</button>
+    </div>
+  </div>
+
+  <!-- ════ FOOTER ════ -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.5rem;">
+          <div class="brand-icon" style="width:34px;height:34px;font-size:.9rem;">GU</div>
+          <span class="brand-name">Greenfield University</span>
+        </div>
+        <p>Shaping leaders, advancing knowledge, and building a better world — since 1892.</p>
+        <div class="footer-social">
+          <div class="social-btn">𝕏</div>
+          <div class="social-btn">in</div>
+          <div class="social-btn">f</div>
+          <div class="social-btn">▶</div>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Admissions</h4>
+        <ul>
+          <li><a href="#">Undergraduate</a></li>
+          <li><a href="#">Postgraduate</a></li>
+          <li><a href="#">International Students</a></li>
+          <li><a href="#">Scholarships</a></li>
+          <li><a href="#">Entry Requirements</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>University</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="academics.html">Programs</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Cookie Policy</a></li>
+          <li><a href="#">GDPR Compliance</a></li>
+          <li><a href="#">Terms of Use</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;">
+        <span>© 2025 Greenfield University. All rights reserved.</span>
+        <span>Powered by <a href="https://arc.thepixpivot.com" target="_blank">ARC Consent Platform</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ════ SCRIPTS ════ -->
+  <script src="js/consent.js"></script>
+  <script src="js/settings.js"></script>
+  <script>
+    document.getElementById('hamburger').addEventListener('click', function() {
+      document.getElementById('navLinks').classList.toggle('mobile-open');
+    });
+  </script>
+
+  <!-- ARC SDK removed: custom consent banner in cookie-banner HTML above handles this -->
+</body>
+</html>

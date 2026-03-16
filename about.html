@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us — Greenfield University</title>
+  <meta name="description" content="Learn about Greenfield University's 130-year history, mission, leadership team, world-class campus, and global research impact.">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* About page specific */
+    .mission-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:1.5rem; }
+    .mission-card { background:var(--white); border-radius:var(--radius); padding:2rem; text-align:center; border:1px solid var(--gray-200); box-shadow:var(--shadow-sm); transition:var(--transition); }
+    .mission-card:hover { transform:translateY(-4px); box-shadow:var(--shadow-md); border-color:var(--teal); }
+    .mission-icon { font-size:2.5rem; margin-bottom:1rem; }
+    .mission-card h3 { color:var(--navy); margin-bottom:.5rem; font-size:1.1rem; }
+
+    .stats-bar { background:var(--navy); padding:50px 0; }
+    .stats-row { display:grid; grid-template-columns:repeat(4,1fr); gap:2rem; text-align:center; }
+    .sb-num { font-size:2.5rem; font-weight:800; color:var(--teal-light); font-family:'Inter',sans-serif; }
+    .sb-label { font-size:.85rem; color:rgba(255,255,255,.55); text-transform:uppercase; letter-spacing:.06em; margin-top:.3rem; }
+
+    .leadership-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2rem; }
+    .leader-card { background:var(--white); border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow-sm); border:1px solid var(--gray-200); transition:var(--transition); }
+    .leader-card:hover { transform:translateY(-4px); box-shadow:var(--shadow-md); }
+    .leader-img { height:180px; display:flex; align-items:center; justify-content:center; font-size:4rem; }
+    .leader-info { padding:1.25rem; }
+    .leader-info h3 { color:var(--navy); font-size:1.05rem; font-family:'Inter',sans-serif; font-weight:700; }
+    .leader-info .role { font-size:.82rem; color:var(--teal-dark); font-weight:600; margin:.2rem 0 .4rem; }
+    .leader-info p { font-size:.8rem; }
+
+    .timeline { position:relative; max-width:900px; margin:3rem auto; padding:2rem 0; }
+    .timeline::before { content:''; position:absolute; left:50%; top:0; bottom:0; width:4px; background:linear-gradient(to bottom, var(--white), var(--teal-light), var(--white)); transform:translateX(-50%); opacity:0.4; border-radius:4px; }
+    .tl-item { position:relative; display:flex; justify-content:space-between; margin-bottom:4rem; width:100%; transition:var(--transition); }
+    .tl-item:nth-child(odd) { justify-content:flex-end; }
+    .tl-item:nth-child(even) { justify-content:flex-start; }
+    .tl-item:nth-child(even) .tl-content { text-align:right; border-right:4px solid var(--teal); }
+    .tl-item:nth-child(odd) .tl-content { text-align:left; border-left:4px solid var(--teal); }
+    
+    .tl-dot { position:absolute; left:50%; top:24px; transform:translate(-50%, 0); width:50px; height:50px; border-radius:50%; background:var(--white); border:3px solid var(--teal); display:flex; align-items:center; justify-content:center; font-size:.9rem; font-weight:800; color:var(--navy); z-index:2; box-shadow:0 4px 15px rgba(0, 180, 160, 0.15); transition:all 0.3s ease; }
+    .tl-item:hover .tl-dot { background:var(--teal); color:var(--white); box-shadow:0 6px 20px rgba(0, 180, 160, 0.3); transform:translate(-50%, -4px) scale(1.05); }
+    
+    .tl-content { width:calc(50% - 4rem); background:var(--white); border-radius:12px; padding:2rem; border:1px solid var(--gray-200); box-shadow:var(--shadow-sm); position:relative; transition:all 0.3s ease; }
+    .tl-content:hover { transform:translateY(-8px); box-shadow:var(--shadow-lg); border-color:var(--teal-light); }
+    .tl-year { font-size:.85rem; font-weight:800; color:var(--teal); text-transform:uppercase; letter-spacing:.1em; margin-bottom:0.75rem; display:inline-block; background:rgba(0,180,160,0.1); padding:0.3rem 0.8rem; border-radius:20px; }
+    .tl-content h4 { color:var(--navy); margin:0 0 .75rem; font-size:1.25rem; font-family:'Inter',sans-serif; font-weight:700; }
+    .tl-content p { font-size:.95rem; color:var(--body); line-height:1.6; margin:0; }
+
+    /* Connecting lines (arrows) */
+    .tl-content::before { content:''; position:absolute; top:49px; width:4rem; height:2px; background:var(--teal-light); opacity:0.6; z-index:-1; transition:all 0.3s ease; }
+    .tl-item:nth-child(odd) .tl-content::before { left:-4rem; }
+    .tl-item:nth-child(even) .tl-content::before { right:-4rem; }
+    .tl-item:hover .tl-content::before { opacity:1; background:var(--teal); width:4.5rem; }
+    .tl-item:nth-child(odd):hover .tl-content::before { left:-4.5rem; }
+    .tl-item:nth-child(even):hover .tl-content::before { right:-4.5rem; }
+
+    @media(max-width:800px){ 
+      .mission-grid,.leadership-grid{grid-template-columns:1fr;} 
+      .stats-row{grid-template-columns:1fr 1fr;} 
+      .timeline::before{left:40px;} 
+      .tl-dot { left:40px; }
+      .tl-item { justify-content:flex-end !important; }
+      .tl-content { width:calc(100% - 90px) !important; text-align:left !important; border-left:4px solid var(--teal) !important; border-right:1px solid var(--gray-200) !important; }
+      .tl-content::before { left:-50px !important; width:50px !important; right:auto !important; }
+      .tl-item:hover .tl-content::before { width:50px !important; left:-50px !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="navbar-brand">
+      <div class="brand-icon">GU</div>
+      <div class="brand-text"><div class="brand-name">Greenfield University</div><div class="brand-sub">Est. 1892</div></div>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="academics.html">Academics</a></li>
+      <li><a href="admissions.html">Admissions</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-cta"><a href="admissions.html" class="btn btn-primary" style="padding:.55rem 1.3rem;font-size:.88rem;">Apply Now →</a></div>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </nav>
+
+  <header class="page-header">
+    <div class="container">
+      <span class="badge badge-teal" style="margin-bottom:1rem;">Est. 1892</span>
+      <h1>About Greenfield University</h1>
+      <p>130+ years of academic excellence, global research, and shaping tomorrow's leaders.</p>
+      <div class="breadcrumb"><a href="index.html">Home</a><span>›</span><span>About</span></div>
+    </div>
+  </header>
+
+  <!-- Mission / Vision / Values -->
+  <section class="section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Our Mission, Vision &amp; Values</h2>
+        <p>The principles that guide everything we do at Greenfield University</p>
+      </div>
+      <div class="mission-grid">
+        <div class="mission-card">
+          <div class="mission-icon">🎯</div>
+          <h3>Mission</h3>
+          <p>To advance knowledge through teaching, learning, and research, and to contribute to the wellbeing of society across the globe.</p>
+        </div>
+        <div class="mission-card">
+          <div class="mission-icon">🌟</div>
+          <h3>Vision</h3>
+          <p>To be among the leading global universities — generating world-changing research and producing graduates who excel wherever they go.</p>
+        </div>
+        <div class="mission-card">
+          <div class="mission-icon">💎</div>
+          <h3>Values</h3>
+          <p>Integrity, Curiosity, Inclusivity, Collaboration, and Responsibility form the core of our academic community.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Bar -->
+  <div class="stats-bar">
+    <div class="container stats-row">
+      <div><div class="sb-num">28,000+</div><div class="sb-label">Students</div></div>
+      <div><div class="sb-num">3,200</div><div class="sb-label">Faculty Members</div></div>
+      <div><div class="sb-num">140+</div><div class="sb-label">Programs</div></div>
+      <div><div class="sb-num">120</div><div class="sb-label">Countries Represented</div></div>
+    </div>
+  </div>
+
+  <!-- Leadership -->
+  <section class="section" id="leadership">
+    <div class="container">
+      <div class="section-title">
+        <h2>University Leadership</h2>
+        <p>Guided by world-class academics and administrators</p>
+      </div>
+      <div class="leadership-grid">
+        <div class="leader-card"><div class="leader-img" style="background:linear-gradient(135deg,var(--navy),var(--navy-mid));">👩‍🏫</div><div class="leader-info"><h3>Prof. Eleanor J. Watson</h3><div class="role">Vice-Chancellor &amp; President</div><p>Former Dean of Oxford's Faculty of Science with 30 years in academia.</p></div></div>
+        <div class="leader-card"><div class="leader-img" style="background:linear-gradient(135deg,var(--teal-dark),var(--teal));">👨‍💼</div><div class="leader-info"><h3>Dr. Samuel O. Adeyemi</h3><div class="role">Pro-Vice-Chancellor (Research)</div><p>Pioneering researcher in sustainable engineering with 200+ publications.</p></div></div>
+        <div class="leader-card"><div class="leader-img" style="background:linear-gradient(135deg,var(--gold-dark),var(--gold));">👩‍💼</div><div class="leader-info"><h3>Ms. Priya Bhatia</h3><div class="role">Chief Operating Officer</div><p>20 years in higher education management and strategic institutional growth.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- History Timeline -->
+  <section class="section" style="background:var(--off-white);">
+    <div class="container">
+      <div class="section-title">
+        <h2>Our History</h2>
+        <p>130 years of milestones that shaped who we are</p>
+      </div>
+      <div class="timeline">
+        <div class="tl-item"><div class="tl-dot">1892</div><div class="tl-content"><div class="tl-year">1892</div><h4>University Founded</h4><p>Greenfield University opens its doors with 3 faculties and 200 students in the historic Heritage Building.</p></div></div>
+        <div class="tl-item"><div class="tl-dot">1945</div><div class="tl-content"><div class="tl-year">1945</div><h4>Research Institute Established</h4><p>The Greenfield Institute for Scientific Research founded, producing Nobel Prize-winning work in physics.</p></div></div>
+        <div class="tl-item"><div class="tl-dot">1978</div><div class="tl-content"><div class="tl-year">1978</div><h4>School of Medicine Opens</h4><p>Partnership with City General Hospital launches world-class medical training programme.</p></div></div>
+        <div class="tl-item"><div class="tl-dot">2005</div><div class="tl-content"><div class="tl-year">2005</div><h4>Global Rankings Debut</h4><p>Greenfield enters the world's Top 100 universities for the first time in QS World University Rankings.</p></div></div>
+        <div class="tl-item"><div class="tl-dot">2025</div><div class="tl-content"><div class="tl-year">2025</div><h4>School of AI &amp; Data Science</h4><p>New faculty dedicated to artificial intelligence, data science, and quantum computing launches this September.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:linear-gradient(135deg,var(--teal-dark),var(--navy));text-align:center;">
+    <div class="container">
+      <h2 style="color:white;margin-bottom:.75rem;">Become Part of Our Story</h2>
+      <p style="color:rgba(255,255,255,.65);margin-bottom:2rem;">Join 28,000 students from 120 countries at Greenfield University.</p>
+      <a href="admissions.html" class="btn btn-primary" style="font-size:1rem;padding:.85rem 2rem;">Apply for 2025 →</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand"><div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.5rem;"><div class="brand-icon" style="width:34px;height:34px;font-size:.9rem;">GU</div><span class="brand-name">Greenfield University</span></div><p>Shaping leaders, advancing knowledge — since 1892.</p></div>
+      <div class="footer-col"><h4>University</h4><ul><li><a href="about.html">About Us</a></li><li><a href="academics.html">Programs</a></li><li><a href="events.html">Events</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h4>Admissions</h4><ul><li><a href="admissions.html">Apply Now</a></li><li><a href="#">Scholarships</a></li><li><a href="#">International</a></li></ul></div>
+      <div class="footer-col"><h4>Legal</h4><ul><li><a href="#">Privacy Policy</a></li><li><a href="#">Cookie Policy</a></li><li><a href="#">Terms</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><div class="container" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;"><span>© 2025 Greenfield University</span><span><a href="#">Privacy</a> · <a href="#">Cookies</a></span></div></div>
+  </footer>
+
+  <script src="js/settings.js"></script>
+  <script>document.getElementById('hamburger').addEventListener('click',()=>document.getElementById('navLinks').classList.toggle('mobile-open'));</script>
+
+  <!-- ARC Cookie Banner SDK -->
+  <script
+    src="https://arcompli.com/sdk/cookie-banner.js"
+    data-api-key="arc_live_cbb9cecb070b6ebeda1ba066bb9beacd"
+    data-position="bottom"
+    data-auto-block="true"
+  ></script>
+</body>
+</html>

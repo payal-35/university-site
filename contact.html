@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Greenfield University</title>
+  <meta name="description" content="Contact Greenfield University's admissions team, academic departments, and student services.">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .contact-grid { display:grid; grid-template-columns:1fr 1.5fr; gap:4rem; align-items:start; }
+    .contact-card { background:white; border-radius:var(--radius); border:1px solid var(--gray-200); padding:1.75rem; box-shadow:var(--shadow-sm); margin-bottom:1.5rem; display:flex; gap:1.2rem; align-items:flex-start; transition:var(--transition); }
+    .contact-card:hover { box-shadow:var(--shadow-md); transform:translateY(-2px); }
+    .cc-icon { width:50px; height:50px; border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:1.4rem; flex-shrink:0; }
+    .cc-info h4 { color:var(--navy); font-family:'Inter',sans-serif; font-weight:700; font-size:.95rem; margin-bottom:.3rem; }
+    .cc-info p,.cc-info a { font-size:.85rem; color:var(--gray-600); }
+    .cc-info a { color:var(--teal-dark); font-weight:500; }
+    .cc-info a:hover { text-decoration:underline; }
+    .simple-form .form-group { margin-bottom:1.2rem; }
+    .simple-form label { display:block; font-size:.82rem; font-weight:600; color:var(--navy); margin-bottom:.4rem; }
+    .simple-form input,.simple-form textarea,.simple-form select { width:100%; padding:.72rem 1rem; border:1.5px solid var(--gray-200); border-radius:10px; font-family:'Inter',sans-serif; font-size:.9rem; outline:none; background:var(--gray-50); transition:var(--transition); }
+    .simple-form input:focus,.simple-form textarea:focus,.simple-form select:focus { border-color:var(--teal); background:white; box-shadow:0 0 0 3px rgba(0,180,160,.12); }
+    .simple-form textarea { resize:vertical; min-height:120px; }
+    .map-placeholder { background:linear-gradient(135deg,var(--navy),var(--navy-mid)); border-radius:var(--radius); height:280px; display:flex; flex-direction:column; align-items:center; justify-content:center; color:white; font-size:3rem; margin-bottom:2rem; position:relative; overflow:hidden; }
+    .map-placeholder::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 50% 50%,rgba(0,180,160,.2),transparent 70%); }
+    .map-placeholder span { font-size:.9rem; font-family:'Inter',sans-serif; margin-top:.5rem; opacity:.6; position:relative; }
+    @media(max-width:860px){ .contact-grid{grid-template-columns:1fr;} }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="navbar-brand"><div class="brand-icon">GU</div><div class="brand-text"><div class="brand-name">Greenfield University</div><div class="brand-sub">Est. 1892</div></div></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="academics.html">Academics</a></li><li><a href="admissions.html">Admissions</a></li><li><a href="events.html">Events</a></li><li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+    <div class="nav-cta"><a href="admissions.html" class="btn btn-primary" style="padding:.55rem 1.3rem;font-size:.88rem;">Apply Now →</a></div>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </nav>
+
+  <header class="page-header">
+    <div class="container">
+      <span class="badge badge-teal" style="margin-bottom:1rem;">Get in Touch</span>
+      <h1>Contact Greenfield University</h1>
+      <p>Our admissions team and student services are here to help. We typically respond within 24 hours.</p>
+      <div class="breadcrumb"><a href="index.html">Home</a><span>›</span><span>Contact</span></div>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <div class="contact-grid">
+
+        <!-- Left: Contact Details -->
+        <div>
+          <div class="map-placeholder">
+            🗺️
+            <span>Greenfield Campus, University Road, GF1 2UD</span>
+          </div>
+
+          <div class="contact-card">
+            <div class="cc-icon" style="background:rgba(0,180,160,.1);">📍</div>
+            <div class="cc-info">
+              <h4>Campus Address</h4>
+              <p>Greenfield University<br>University Road, Greenfield<br>GF1 2UD, United Kingdom</p>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <div class="cc-icon" style="background:rgba(13,27,62,.07);">📞</div>
+            <div class="cc-info">
+              <h4>Admissions Helpline</h4>
+              <p>+1 (800) 555-0192</p>
+              <a href="tel:+18005550192">Call Now →</a>
+              <p style="margin-top:.3rem;font-size:.75rem;color:var(--gray-400);">Mon–Fri, 9am – 5pm</p>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <div class="cc-icon" style="background:rgba(245,200,66,.12);">✉️</div>
+            <div class="cc-info">
+              <h4>Email Us</h4>
+              <a href="mailto:admissions@greenfield.edu">admissions@greenfield.edu</a><br>
+              <a href="mailto:info@greenfield.edu" style="margin-top:.3rem;display:block;">info@greenfield.edu</a>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <div class="cc-icon" style="background:rgba(0,180,160,.1);">💬</div>
+            <div class="cc-info">
+              <h4>Student Services</h4>
+              <p>Room 101, Student Union Building</p>
+              <a href="mailto:students@greenfield.edu">students@greenfield.edu</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Quick Contact Form -->
+        <div>
+          <div style="background:white;border-radius:var(--radius-lg);padding:2.5rem;box-shadow:var(--shadow-md);border:1px solid var(--gray-200);">
+            <h2 style="color:var(--navy);margin-bottom:.4rem;font-size:1.4rem;">Send Us a Message</h2>
+            <p style="font-size:.87rem;margin-bottom:1.75rem;padding-bottom:1.25rem;border-bottom:1px solid var(--gray-200);">For applications with email consent, please use the <a href="admissions.html" style="color:var(--teal-dark);font-weight:600;">Admissions form →</a></p>
+
+            <form class="simple-form" id="contactForm" novalidate>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;">
+                <div class="form-group">
+                  <label for="cName">Full Name *</label>
+                  <input type="text" id="cName" placeholder="Your name" required>
+                </div>
+                <div class="form-group">
+                  <label for="cEmail">Email *</label>
+                  <input type="email" id="cEmail" placeholder="you@example.com" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="cDept">Department / Topic</label>
+                <select id="cDept">
+                  <option value="">Select department…</option>
+                  <option>Admissions Office</option>
+                  <option>Student Services</option>
+                  <option>Finance &amp; Fees</option>
+                  <option>International Office</option>
+                  <option>Research Office</option>
+                  <option>General Enquiry</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="cMessage">Your Message *</label>
+                <textarea id="cMessage" rows="5" placeholder="How can we help you?"></textarea>
+              </div>
+              <button type="submit" class="btn btn-navy" style="width:100%;justify-content:center;padding:1rem;font-size:1rem;">Send Message →</button>
+              <p style="font-size:.75rem;color:var(--gray-400);text-align:center;margin-top:.75rem;">We respond within 24 hours · Not for urgent matters — please call instead.</p>
+            </form>
+
+            <div id="contactSuccess" style="display:none;text-align:center;padding:2rem;background:rgba(0,180,160,.06);border-radius:var(--radius);border:1px solid rgba(0,180,160,.2);margin-top:1rem;">
+              <div style="font-size:2.5rem;margin-bottom:.75rem;">✅</div>
+              <h3 style="color:var(--navy);font-size:1.1rem;">Message Sent!</h3>
+              <p style="font-size:.85rem;">We'll get back to you at the email provided within 24 hours.</p>
+            </div>
+          </div>
+
+          <!-- Department Contacts Card -->
+          <div style="background:var(--navy);border-radius:var(--radius);padding:1.75rem;margin-top:1.75rem;">
+            <h3 style="color:white;font-family:'Inter',sans-serif;font-size:1rem;margin-bottom:1rem;">Key Department Contacts</h3>
+            <div style="display:grid;gap:.75rem;">
+              <div style="display:flex;justify-content:space-between;font-size:.82rem;color:rgba(255,255,255,.65);padding-bottom:.75rem;border-bottom:1px solid rgba(255,255,255,.1);">
+                <span>🎓 Admissions</span><a href="mailto:admissions@greenfield.edu" style="color:var(--teal-light);">admissions@greenfield.edu</a>
+              </div>
+              <div style="display:flex;justify-content:space-between;font-size:.82rem;color:rgba(255,255,255,.65);padding-bottom:.75rem;border-bottom:1px solid rgba(255,255,255,.1);">
+                <span>💳 Finance</span><a href="mailto:finance@greenfield.edu" style="color:var(--teal-light);">finance@greenfield.edu</a>
+              </div>
+              <div style="display:flex;justify-content:space-between;font-size:.82rem;color:rgba(255,255,255,.65);padding-bottom:.75rem;border-bottom:1px solid rgba(255,255,255,.1);">
+                <span>🌍 International</span><a href="mailto:international@greenfield.edu" style="color:var(--teal-light);">international@greenfield.edu</a>
+              </div>
+              <div style="display:flex;justify-content:space-between;font-size:.82rem;color:rgba(255,255,255,.65);">
+                <span>🔬 Research</span><a href="mailto:research@greenfield.edu" style="color:var(--teal-light);">research@greenfield.edu</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer"><div class="container footer-grid"><div class="footer-brand"><div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.5rem;"><div class="brand-icon" style="width:34px;height:34px;font-size:.9rem;">GU</div><span class="brand-name">Greenfield University</span></div><p>Shaping leaders, advancing knowledge — since 1892.</p></div><div class="footer-col"><h4>University</h4><ul><li><a href="about.html">About</a></li><li><a href="academics.html">Academics</a></li><li><a href="admissions.html">Admissions</a></li><li><a href="events.html">Events</a></li></ul></div><div class="footer-col"><h4>Contact</h4><ul><li><a href="tel:+18005550192">+1 800 555 0192</a></li><li><a href="mailto:admissions@greenfield.edu">admissions@greenfield.edu</a></li></ul></div><div class="footer-col"><h4>Legal</h4><ul><li><a href="#">Privacy</a></li><li><a href="#">Cookies</a></li><li><a href="#">Terms</a></li></ul></div></div><div class="footer-bottom"><div class="container" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;"><span>© 2025 Greenfield University</span><span><a href="#">Privacy</a> · <a href="#">Cookies</a></span></div></div></footer>
+
+  <script src="js/settings.js"></script>
+  <script>
+    document.getElementById('hamburger').addEventListener('click',()=>document.getElementById('navLinks').classList.toggle('mobile-open'));
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('cName').value.trim();
+      const email = document.getElementById('cEmail').value.trim();
+      const msg = document.getElementById('cMessage').value.trim();
+      if (!name || !email || !msg) { alert('Please fill all required fields.'); return; }
+      this.style.display = 'none';
+      document.getElementById('contactSuccess').style.display = 'block';
+    });
+  </script>
+
+  <!-- ARC Cookie Banner SDK -->
+  <script
+    src="https://arcompli.com/sdk/cookie-banner.js"
+    data-api-key="arc_live_cbb9cecb070b6ebeda1ba066bb9beacd"
+    data-position="bottom"
+    data-auto-block="true"
+  ></script>
+</body>
+</html>

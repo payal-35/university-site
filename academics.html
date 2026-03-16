@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Academics — Greenfield University Programs</title>
+  <meta name="description" content="Explore 140+ undergraduate and postgraduate programs across 9 faculties at Greenfield University.">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .programs-filter { display:flex; gap:.6rem; flex-wrap:wrap; margin-bottom:2.5rem; justify-content:center; }
+    .filter-btn { padding:.45rem 1.2rem; border-radius:50px; border:1.5px solid var(--gray-200); background:white; font-family:'Inter',sans-serif; font-size:.82rem; font-weight:600; cursor:pointer; transition:var(--transition); color:var(--gray-600); }
+    .filter-btn.active,.filter-btn:hover { background:var(--navy); color:white; border-color:var(--navy); }
+    .programs-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; }
+    .prog-card { background:var(--white); border-radius:var(--radius); border:1px solid var(--gray-200); overflow:hidden; box-shadow:var(--shadow-sm); transition:var(--transition); }
+    .prog-card:hover { transform:translateY(-4px); box-shadow:var(--shadow-md); border-color:var(--teal); }
+    .prog-header { padding:1.5rem; background:var(--navy); color:white; display:flex; align-items:center; gap:1rem; }
+    .prog-icon { font-size:2rem; }
+    .prog-header h3 { font-family:'Inter',sans-serif; font-size:1rem; font-weight:700; }
+    .prog-header .prog-school { font-size:.72rem; color:rgba(255,255,255,.55); margin-top:2px; }
+    .prog-body { padding:1.25rem; }
+    .prog-body p { font-size:.83rem; margin-bottom:.75rem; }
+    .prog-meta { display:flex; gap:.5rem; flex-wrap:wrap; }
+    .prog-tag { font-size:.7rem; font-weight:600; padding:3px 10px; border-radius:20px; background:var(--gray-100); color:var(--gray-600); }
+    .prog-tag.green { background:rgba(0,180,160,.1); color:var(--teal-dark); }
+    .prog-apply { display:block; text-align:center; margin-top:1rem; padding:.55rem; background:var(--navy); color:white; border-radius:8px; font-size:.82rem; font-weight:600; transition:var(--transition); }
+    .prog-apply:hover { background:var(--teal-dark); }
+    .search-bar { max-width:520px; margin:0 auto 2rem; position:relative; }
+    .search-bar input { width:100%; padding:.8rem 1.2rem .8rem 3rem; border-radius:50px; border:1.5px solid var(--gray-200); font-family:'Inter',sans-serif; font-size:.9rem; outline:none; background:white; transition:var(--transition); }
+    .search-bar input:focus { border-color:var(--teal); box-shadow:0 0 0 3px rgba(0,180,160,.12); }
+    .search-bar .si { position:absolute; left:1rem; top:50%; transform:translateY(-50%); color:var(--gray-400); font-size:1rem; }
+    @media(max-width:900px){ .programs-grid{grid-template-columns:1fr 1fr;} }
+    @media(max-width:580px){ .programs-grid{grid-template-columns:1fr;} }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="navbar-brand"><div class="brand-icon">GU</div><div class="brand-text"><div class="brand-name">Greenfield University</div><div class="brand-sub">Est. 1892</div></div></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="academics.html" class="active">Academics</a></li><li><a href="admissions.html">Admissions</a></li><li><a href="events.html">Events</a></li><li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-cta"><a href="admissions.html" class="btn btn-primary" style="padding:.55rem 1.3rem;font-size:.88rem;">Apply Now →</a></div>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </nav>
+
+  <header class="page-header">
+    <div class="container">
+      <span class="badge badge-teal" style="margin-bottom:1rem;">140+ Programs</span>
+      <h1>Academics at Greenfield</h1>
+      <p>Explore world-class programs across our 9 schools and faculties. Find the course that ignites your passion.</p>
+      <div class="breadcrumb"><a href="index.html">Home</a><span>›</span><span>Academics</span></div>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <div class="search-bar">
+        <span class="si">🔍</span>
+        <input type="text" placeholder="Search programs, departments…" id="programSearch">
+      </div>
+      <div class="programs-filter">
+        <button class="filter-btn active" data-cat="all">All Programs</button>
+        <button class="filter-btn" data-cat="ug">Undergraduate</button>
+        <button class="filter-btn" data-cat="pg">Postgraduate</button>
+        <button class="filter-btn" data-cat="research">Research / PhD</button>
+        <button class="filter-btn" data-cat="online">Online</button>
+      </div>
+      <div class="programs-grid" id="programsGrid">
+        <div class="prog-card"><div class="prog-header" style="background:linear-gradient(135deg,#0d1b3e,#162450);"><div class="prog-icon">💻</div><div><h3>Computer Science &amp; AI</h3><div class="prog-school">School of Engineering &amp; Technology</div></div></div><div class="prog-body"><p>BSc, MSc, PhD — Globally ranked #3. Covers algorithms, machine learning, distributed systems, and emerging AI technologies.</p><div class="prog-meta"><span class="prog-tag green">BSc · 3 yrs</span><span class="prog-tag green">MSc · 1 yr</span><span class="prog-tag">Ranked #3</span><span class="prog-tag">Full-time</span></div><a href="admissions.html" class="prog-apply">Apply Now →</a></div></div>
+        <div class="prog-card"><div class="prog-header" style="background:linear-gradient(135deg,#00b4a0,#008f7d);"><div class="prog-icon">🧬</div><div><h3>Biomedical Sciences</h3><div class="prog-school">School of Life Sciences</div></div></div><div class="prog-body"><p>BSc, MSc, MBChB — 98% employment rate. Cutting-edge research labs and hospital placements in your final year.</p><div class="prog-meta"><span class="prog-tag green">BSc · 3 yrs</span><span class="prog-tag green">MBChB · 5 yrs</span><span class="prog-tag">98% Employment</span></div><a href="admissions.html" class="prog-apply">Apply Now →</a></div></div>
+        <div class="prog-card"><div class="prog-header" style="background:linear-gradient(135deg,#4a1a8f,#6b2db5);"><div class="prog-icon">⚖️</div><div><h3>Law &amp; Governance</h3><div class="prog-school">School of Law</div></div></div><div class="prog-body"><p>LLB, LLM, PhD — Top 5 Law School globally. Strong focus on international law, human rights, and corporate governance.</p><div class="prog-meta"><span class="prog-tag green">LLB · 3 yrs</span><span class="prog-tag green">LLM · 1 yr</span><span class="prog-tag">Top 5 Global</span></div><a href="admissions.html" class="prog-apply">Apply Now →</a></div></div>
+        <div class="prog-card"><div class="prog-header" style="background:linear-gradient(135deg,#c27800,#f5a500);"><div class="prog-icon">📊</div><div><h3>Business &amp; Economics</h3><div class="prog-school">Greenfield Business School</div></div></div><div class="prog-body"><p>BBA, MBA, MSc Finance — AACSB Accredited. Industry mentorship programme with Fortune 500 companies.</p><div class="prog-meta"><span class="prog-tag green">BBA · 3 yrs</span><span class="prog-tag green">MBA · 2 yrs</span><span class="prog-tag">AACSB</span></div><a href="admissions.html" class="prog-apply">Apply Now →</a></div></div>
+        <div class="prog-card"><div class="prog-header" style="background:linear-gradient(135deg,#1a5c3a,#2d8b55);"><div class="prog-icon">🏗️</div><div><h3>Engineering</h3><div class="prog-school">School of Engineering</div></div></div><div class="prog-body"><p>Mechanical, Civil, Electrical, Chemical — BEng and MEng. State-of-the-art labs, industry placements, and PhD pathways.</p><div class="prog-meta"><span class="prog-tag green">BEng · 4 yrs</span><span class="prog-tag green">MEng · 5 yrs</span><span class="prog-tag">Accredited</span></div><a href="admissions.html" class="prog-apply">Apply Now →</a></div></div>
+        <div class="prog-card"><div class="prog-header" style="background:linear-gradient(135deg,#8b1a1a,#c02c2c);"><div class="prog-icon">🎨</div><div><h3>Arts &amp; Humanities</h3><div class="prog-school">Faculty of Arts</div></div></div><div class="prog-body"><p>Creative Writing, Philosophy, History, Fine Arts — Interdisciplinary approach with world-class galleries and archive access.</p><div class="prog-meta"><span class="prog-tag green">BA · 3 yrs</span><span class="prog-tag green">MA · 1 yr</span><span class="prog-tag">Creative Focus</span></div><a href="admissions.html" class="prog-apply">Apply Now →</a></div></div>
+        <div class="prog-card"><div class="prog-header" style="background:linear-gradient(135deg,#0d3b6e,#1a5fa8);"><div class="prog-icon">🔬</div><div><h3>Data Science</h3><div class="prog-school">School of AI &amp; Data</div></div></div><div class="prog-body"><p>MSc Data Science — Launching September 2025. Covers statistical modelling, big data pipelines, and real-world analytics projects.</p><div class="prog-meta"><span class="prog-tag green">MSc · 1 yr</span><span class="prog-tag">New 2025</span><span class="prog-tag">Online Available</span></div><a href="admissions.html" class="prog-apply">Apply Now →</a></div></div>
+        <div class="prog-card"><div class="prog-header" style="background:linear-gradient(135deg,#3d1a6e,#7a35c0);"><div class="prog-icon">🧠</div><div><h3>Psychology</h3><div class="prog-school">Faculty of Social Sciences</div></div></div><div class="prog-body"><p>BSc, MSc Psychology — Clinical, developmental, and cognitive specialisations. Includes research placement in Year 3.</p><div class="prog-meta"><span class="prog-tag green">BSc · 3 yrs</span><span class="prog-tag green">MSc · 1 yr</span><span class="prog-tag">BPS Accredited</span></div><a href="admissions.html" class="prog-apply">Apply Now →</a></div></div>
+        <div class="prog-card"><div class="prog-header" style="background:linear-gradient(135deg,#1a4a2e,#2d7a4a);"><div class="prog-icon">🌍</div><div><h3>Environmental Studies</h3><div class="prog-school">School of Earth Sciences</div></div></div><div class="prog-body"><p>BSc, MSc — Climate change, sustainability, and environmental policy. Fieldwork in 12 countries across all 3 years.</p><div class="prog-meta"><span class="prog-tag green">BSc · 3 yrs</span><span class="prog-tag">Fieldwork</span><span class="prog-tag">Sustainability</span></div><a href="admissions.html" class="prog-apply">Apply Now →</a></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:linear-gradient(135deg,var(--teal-dark),var(--navy));text-align:center;">
+    <div class="container"><h2 style="color:white;margin-bottom:.75rem;">Found Your Perfect Program?</h2><p style="color:rgba(255,255,255,.65);margin-bottom:2rem;">Apply today — Fall 2025 applications close May 31.</p><a href="admissions.html" class="btn btn-primary" style="font-size:1rem;padding:.85rem 2rem;">Start Application →</a></div>
+  </section>
+
+  <footer class="footer"><div class="container footer-grid"><div class="footer-brand"><div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.5rem;"><div class="brand-icon" style="width:34px;height:34px;font-size:.9rem;">GU</div><span class="brand-name">Greenfield University</span></div><p>Shaping leaders, advancing knowledge — since 1892.</p></div><div class="footer-col"><h4>Programs</h4><ul><li><a href="#">Undergraduate</a></li><li><a href="#">Postgraduate</a></li><li><a href="#">Research</a></li><li><a href="#">Online</a></li></ul></div><div class="footer-col"><h4>University</h4><ul><li><a href="about.html">About</a></li><li><a href="admissions.html">Admissions</a></li><li><a href="contact.html">Contact</a></li></ul></div><div class="footer-col"><h4>Legal</h4><ul><li><a href="#">Privacy</a></li><li><a href="#">Cookies</a></li><li><a href="#">Terms</a></li></ul></div></div><div class="footer-bottom"><div class="container" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;"><span>© 2025 Greenfield University</span><span><a href="#">Privacy</a> · <a href="#">Cookies</a></span></div></div></footer>
+
+  <script src="js/settings.js"></script>
+  <script>
+    document.getElementById('hamburger').addEventListener('click',()=>document.getElementById('navLinks').classList.toggle('mobile-open'));
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+        this.classList.add('active');
+      });
+    });
+  </script>
+
+  <!-- ARC Cookie Banner SDK -->
+  <script
+    src="https://arcompli.com/sdk/cookie-banner.js"
+    data-api-key="arc_live_cbb9cecb070b6ebeda1ba066bb9beacd"
+    data-position="bottom"
+    data-auto-block="true"
+  ></script>
+</body>
+</html>
